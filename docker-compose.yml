@@ -1,0 +1,28 @@
+version: "3.10"
+
+services:
+  web:
+    build: ./src
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes: 
+      - ./src:/code
+    ports:
+      - 1337:8000
+    depends_on:
+      - redis
+  redis:
+    image: redis
+  celery:
+    build: ./src
+    command: celery -A config worker -l info
+    volumes: 
+      - ./src:/code
+    depends_on:
+      - redis
+  celery-beat:
+    build: ./src
+    command: celery -A config beat -l info
+    volumes: 
+      - ./src:/code
+    depends_on:
+      - redis
