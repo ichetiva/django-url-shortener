@@ -6,7 +6,7 @@ Endpoints:
 3. GET `/[some code]` - redirect by code of short link
 4. GET `/usage-count?code=[some code]` - get number os usages short link by code
 
-Launch project:
+Starting:
 1. Clone repository
 ```shell
 git clone https://github.com/ichetiva/django-url-shortener.git
