@@ -1,17 +1,22 @@
-# Simple URL shortener powered by Python, Django and Celery
+# Simple URL shortener powered by Python, Django
 
-Endpoints:
-1. GET `/` - return form for create short link
-2. POST `/` - create short link by form from first endpoint
-3. GET `/[some code]` - redirect by code of short link
-4. GET `/usage-count?code=[some code]` - get number os usages short link by code
+| Method | Location                  | Description                                |
+| ------ | ------------------------- | ------------------------------------------ |
+| GET    | `/`                       | Returns page with form to create short URL |
+| GET    | `/[code]`                 | Redirect to URL by code                    |
+| GET    | `/usageCount?code=[code]` | Get usage count of short URL by code       |
 
-Starting:
+### Installation:
+
 1. Clone repository
+
 ```shell
 git clone https://github.com/ichetiva/django-url-shortener.git
 ```
-2. Run by docker compose
+
+2. Rename `.example.env` to `.env` and setting it
+3. Run the app
+
 ```shell
-docker-compose up -d -build
+docker-compose up --build
 ```
