@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "django-url-shortener"
+version = "0.1.0"
+description = ""
+authors = ["ichetiva <feoktistovvladislav@outlook.com>"]
+readme = "README.md"
+packages = [{include = "django_url_shortener"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+django = "^4.2.3"
+redis = "^4.6.0"
+celery = "^5.3.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
